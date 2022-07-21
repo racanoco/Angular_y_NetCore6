@@ -1,0 +1,15 @@
+<!-- INTERPOLACIÓN valor de la variable ts al html -->
+<h2>{{ titleEnCines }}</h2>
+
+<!-- Llamada a un componente hijo y pasando parametro por Binding de atributo    -->
+<app-listado-peliculas 
+   [peliculas]="peliculasEnCines">
+</app-listado-peliculas>
+
+<!-- INTERPOLACIÓN valor de la variable ts al html  -->
+<h2>{{ titleFuturosEstrenos }}</h2>
+
+<!-- Llamada a un componente hijo y pasando parametro por Binding de atributo   -->
+<app-listado-peliculas 
+   [peliculas]="peliculasProximosEstrenosa">
+</app-listado-peliculas>

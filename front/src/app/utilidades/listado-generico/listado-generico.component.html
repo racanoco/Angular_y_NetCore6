@@ -1,0 +1,47 @@
+<!-- Mostramos la imagen miestras no tengamos datos para cargar. -->
+<div *ngIf="!listado">
+    <span #cargando>
+        <ng-content select="[cargando]"></ng-content>
+    </span>    
+    <span *ngIf="!cargando.innerHTML.trim()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921" />
+    </span>
+</div>
+
+<!-- Mostramos el sigueinte mensaje si no tenemos datos que cargar. -->
+<div *ngIf="listado?.length === 0">
+    <span #vacio><ng-content select="[vacio]"></ng-content></span>
+    <span *ngIf="!vacio.innerHTML.trim()">
+        <p>No hay películas para mostrar</p>
+    </span>    
+</div>
+
+
+<ng-container *ngIf="listado && listado.length > 0"> 
+    <ng-content select="[contenido]"></ng-content>
+</ng-container>
+
+
+<!-- Solo mostraremos los datos si los tenemos. 
+<ng-container *ngIf="listado && listado.length > 0">    
+
+   ngFor Interando colecciones en el UI
+    <div *ngFor="let pelicula of listado; let index = index" class="pelicula-contenedor">
+
+        <div>
+            Utilizando Pipes para dar formato al titulo     Utilizando branding de eventos de tipo click en un boton  
+            Película {{index}}: {{pelicula.titulo | uppercase}} <button style="margin-left: 1rem;" (click)="removerPelicula(index)">Remover</button>
+        </div>
+        
+        <div>
+             Utilizando Pipes para dar formato a la fecha de lanzamioento 
+            {{pelicula.fechaLanzamiento | date}}
+            {{pelicula.fechaLanzamiento | date: "dd-MMMM-yyyy" | uppercase}}
+        </div>
+        <div>
+            {{pelicula.precio | currency}}
+        </div>
+        
+    </div>
+
+</ng-container>  -->
