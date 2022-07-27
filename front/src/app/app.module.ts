@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { FormularioActoresComponent } from './actores/formulario-actores/formula
 import { InputImagenComponent } from './utilidades/input-imagen/input-imagen.component';
 import { InputMarkdownComponent } from './utilidades/input-markdown/input-markdown.component';
 import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine.component';
+import { MapaComponent } from './utilidades/mapa/mapa.component';
 
 @NgModule({
   declarations: [
@@ -55,14 +57,16 @@ import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine
     FormularioActoresComponent,
     InputImagenComponent,
     InputMarkdownComponent,
-    FormularioCineComponent
+    FormularioCineComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]
